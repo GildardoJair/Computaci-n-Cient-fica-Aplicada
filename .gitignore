@@ -1,1 +1,13 @@
+# Extensiones auxiliares de LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.nav
+*.snm
+*.fdb_latexmk
+*.fls
+*.synctex.gz
 
+# Solo si prefieres compilar el PDF localmente y no subirlo
+# *.pdf
