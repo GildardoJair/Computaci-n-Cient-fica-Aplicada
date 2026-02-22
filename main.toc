@@ -1,2 +1,0 @@
-\babel@toc {spanish}{}\relax 
-\contentsline {section}{\numberline {0.1}Espacios Vectoriales}{2}{section.0.1}%
