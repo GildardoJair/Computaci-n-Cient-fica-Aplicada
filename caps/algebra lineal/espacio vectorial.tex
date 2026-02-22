@@ -1,0 +1,31 @@
+\section{Espacios Vectoriales}
+¿Alguna vez te has preguntado la relación que tienen los vectores que se estudian en física para describir magnitudes como la fuerza, el desplazamiento, aceleración con las matrices que se estudian en álgebra? o ¿con las funciones continuas o sucesiones que se estudian en cálculo?, bueno, en realidad todos son un espacio vectorial.
+
+\begin{definition}[Espacio Vectorial]
+	Sea $V$ un conjunto no vacío y $\mathbb{K}$ un cuerpo (usualmente $\mathbb{R}$ o $\mathbb{C}$). Se dice que $V$ es un \textbf{espacio vectorial} sobre $\mathbb{K}$ si existen dos operaciones:
+	\begin{itemize}
+		\item \textbf{Suma:} $+: V \times V \to V$
+		\item \textbf{Producto por un escalar:} $\cdot: \mathbb{K} \times V \to V$
+	\end{itemize}
+	
+	Que cumplen las siguientes 8 propiedades para todo $\mathbf{u}, \mathbf{v}, \mathbf{w} \in V$ y $a, b \in \mathbb{K}$:
+	
+	\subsubsection*{Propiedades de la suma}
+	\begin{enumerate}
+		\item \textbf{Asociativa:} $\mathbf{u} + (\mathbf{v} + \mathbf{w}) = (\mathbf{u} + \mathbf{v}) + \mathbf{w}$
+		\item \textbf{Conmutativa:} $\mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u}$
+		\item \textbf{Elemento neutro:} $\exists \mathbf{0} \in V$ tal que $\mathbf{u} + \mathbf{0} = \mathbf{u}$
+		\item \textbf{Elemento opuesto:} $\forall \mathbf{u} \in V, \exists (-\mathbf{u}) \in V$ tal que $\mathbf{u} + (-\mathbf{u}) = \mathbf{0}$
+	\end{enumerate}
+	
+	\subsubsection*{Propiedades del producto por escalar}
+	\begin{enumerate}
+		\item \textbf{Distributiva respecto a la suma de vectores:} $a(\mathbf{u} + \mathbf{v}) = a\mathbf{u} + a\mathbf{v}$
+		\item \textbf{Distributiva respecto a la suma de escalares:} $(a + b)\mathbf{u} = a\mathbf{u} + b\mathbf{u}$
+		\item \textbf{Asociativa mixta:} $a(b\mathbf{u}) = (ab)\mathbf{u}$
+		\item \textbf{Elemento unidad:} $1 \cdot \mathbf{u} = \mathbf{u}$ (donde $1$ es la unidad de $\mathbb{K}$)
+	\end{enumerate}
+\end{definition}
+\begin{ejemplo}[$\mathbb{R}^2$]
+	Considere el conjunto de pares ordenados $(x, y)$. Si definimos la suma componente a componente, este conjunto forma un espacio vectorial sobre los reales.
+\end{ejemplo}

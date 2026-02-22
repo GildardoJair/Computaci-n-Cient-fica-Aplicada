@@ -1,0 +1,44 @@
+% --- Idioma y Codificación ---
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+% --- Matemáticas Avanzadas ---
+\usepackage{amsmath, amssymb, amsthm} % Esenciales para física
+\usepackage{bm} % Para negritas en símbolos matemáticos (vectores)
+% --- Gráficos y Colores ---
+\usepackage{graphicx}
+\graphicspath{{img/}} % Indica donde están las imágenes
+\usepackage{xcolor}
+
+% Definición de tus colores personalizados
+\definecolor{navyblue}{RGB}{0, 0, 128}      % Azul Marino
+\definecolor{darkred}{RGB}{150, 0, 0}
+% Entorno personalizado para Ejemplos en Azul
+\newenvironment{ejemplo}[1][]{
+	\itshape\color{navyblue}
+	\medskip
+	\noindent\textbf{Ejemplo #1:} 
+}{
+	\medskip
+}
+
+% Comando rápido para texto importante en Rojo
+\newcommand{\importante}[1]{{\color{darkred}\textbf{#1}}}
+
+% --- Código de Programación (Perfecto para tus scripts de Python/C++) ---
+\usepackage{listings}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\lstset{
+	language=Python,
+	basicstyle=\ttfamily\small,
+	keywordstyle=\color{blue},
+	commentstyle=\color{codegreen},
+	breaklines=true,
+	frame=single
+}
+
+\usepackage{amsthm}
+\newtheorem{definition}{Definición}[section] % Numeración por sección
+
+% --- Hipervínculos ---
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=cyan]{hyperref}
