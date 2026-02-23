@@ -1,0 +1,104 @@
+\chapter{Vectores}
+Los vectores son herramientas matemáticas que nos ayudan a describir fenómenos físicos cómo la velocidad, aceleración , fuerzas, etc. son muy importantes en física e ingenierías, vamos intentar describirlos en este capítulo y mostrar sus características principales.
+
+\section{cantidades vectoriales}
+se dice que una cantidad vectorial es aquella que tiene magnitud y dirección, al contrario de las cantidades escalares que solo cuentan con magnitud pero no con dirección.
+\begin{caja_amarilla}[Notación: formas de representar un vector]
+	En física se usa la notación $\vec{a}$ para referirse al vector a, también se suele usar mucho la notación de negritas
+	$\mathbf{a}$.
+	\medspace
+	\begin{center}
+		\begin{tikzpicture}[>=Stealth, scale=0.8] % Aumenté un poco la escala
+			% Rejilla de fondo (primero para que no tape los ejes)
+			\draw[thin, gray!15] (-1,-1) grid (5,5);
+			
+			% Ejes cartesianos más visibles
+			\draw[thick, black!75, ->] (-1,0) -- (5,0) node[right] {$x$};
+			\draw[thick, black!75, ->] (0,-1) -- (0,5) node[above] {$y$};
+			
+			% Proyecciones (líneas punteadas)
+			\draw[dashed, gray!60] (3,0) -- (3,2);
+			\draw[dashed, gray!60] (0,2) -- (3,2);
+			
+			% El vector (Azul Marino y más grueso)
+			\draw[ultra thick, navyblue, ->] (0,0) -- (3,2) node[midway, above left] {$\mathbf{v}$};
+			
+			% Punto A (Origen)
+			\filldraw[black] (0,0) circle (2pt) node[anchor=north east] {$(0,0)$};
+			
+			% Punto B (Extremo/Punta)
+			\filldraw[black] (3,2) circle (2pt) node[anchor=south west] {$(3,2)$};
+			
+		\end{tikzpicture}
+	\end{center}
+	Un vector se puede representar por medio de coordenadas, por ejemplo:
+	 $$ \mathbf{a} = (3,2) $$
+	también se puede representar por medio de vectores unitarios:
+	$$ \mathbf{a} = 3\hat{x} + 2\hat{y}  $$
+	las coordenadas individuales se denominan \textbf{componentes} del vector.
+	\medspace
+	En general, se representa un vector $\mathbf{v}$ como:
+	$$ \mathbf{v}=(v_1,v_2) $$
+\end{caja_amarilla}
+\subsection*{Suma de Vectores}
+La suma de vectores se define sumando componente por componente, es decir, sean los vectores $\mathbf{v}=(v_1,v_2)$,$\mathbf{u}=(u_1,u_2)$, la suma es:
+
+\begin{equation}
+	\mathbf{v} + \mathbf{u} = (v_1 + u_1, v_2 + u_2)
+\end{equation}
+\begin{figure}[h] % [h] significa 'here' (aquí mismo)
+	\centering
+	\begin{tikzpicture}[>=Stealth, scale=1.0]
+		% ... (aquí va todo tu código del dibujo) ...
+		\draw[thin, gray!15] (-1,-1) grid (6,5);
+		\draw[thick, black!75, ->] (-1,0) -- (6,0) node[right] {$x$};
+		\draw[thick, black!75, ->] (0,-1) -- (0,5) node[above] {$y$};
+		\coordinate (O) at (0,0);
+		\coordinate (V) at (3,1);
+		\coordinate (U) at (2,3);
+		\coordinate (S) at (5,4);
+		\draw[dashed, gray] (V) -- (S);
+		\draw[dashed, gray] (U) -- (S);
+		\draw[ultra thick, navyblue, ->] (O) -- (V) node[midway, below right] {$\mathbf{v}$};
+		\draw[ultra thick, blue!60!cyan, ->] (O) -- (U) node[midway, left] {$\mathbf{u}$};
+		\draw[ultra thick, darkred, ->] (O) -- (S) node[midway, above left] {$\mathbf{v} + \mathbf{u}$};
+		\filldraw[black] (V) circle (1.5pt);
+		\filldraw[black] (U) circle (1.5pt);
+		\filldraw[darkred] (S) circle (2pt) node[anchor=south west] {$(v_1+u_1, v_2+u_2)$};
+	\end{tikzpicture}
+	\caption{Visualización gráfica de la suma de vectores mediante el método del paralelogramo.}
+	\label{fig:suma_vectores}
+\end{figure}
+\subsection*{Multiplicación por un escalar}
+Sea $\mathbf{v}=(v_1,v_2)$ un vector y $\alpha$ un escalar, entonces, se define la multiplicación por un escalar de la siguiente manera:
+\begin{equation}
+	c\mathbf{v}=c(v_1,v_2)=(cv_1,cv_2)
+\end{equation}
+\begin{figure}[htbp]
+	\centering
+	\begin{tikzpicture}[>=Stealth, scale=1.0]
+		% Rejilla
+		\draw[thin, gray!15] (-3,-3) grid (5,3);
+		
+		% Ejes
+		\draw[thick, black!75, ->] (-3,0) -- (5,0) node[right] {$x$};
+		\draw[thick, black!75, ->] (0,-3) -- (0,3) node[above] {$y$};
+		
+		% Coordenadas
+		\coordinate (O) at (0,0);
+		\coordinate (V) at (2,1);    % Vector original v
+		\coordinate (V2) at (4,2);   % 2v (Escalado positivo)
+		
+		% Vector original v
+		\draw[ultra thick, navyblue, ->] (O) -- (V) node[midway, above left] {$\mathbf{v}$};
+		
+		% Vector 2v (estirado)
+		\draw[thick, darkred, ->] (O) -- (V2) node[anchor=south west] {$c\mathbf{v}$};
+		
+		% Puntos para marcar los extremos
+		\filldraw[navyblue] (V) circle (1.5pt);
+		\filldraw[darkred] (V2) circle (1.5pt);
+	\end{tikzpicture}
+	\caption{Representación de la multiplicación de un vector $\mathbf{v}$ por un escalar $c > 1$.}
+	\label{fig:multiplicacion_escalar}
+\end{figure}

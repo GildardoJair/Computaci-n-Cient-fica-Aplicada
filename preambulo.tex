@@ -5,11 +5,12 @@
 % --- Matemáticas Avanzadas ---
 \usepackage{amsmath, amssymb, amsthm} % Esenciales para física
 \usepackage{bm} % Para negritas en símbolos matemáticos (vectores)
+
 % --- Gráficos y Colores ---
 \usepackage{graphicx}
 \graphicspath{{img/}} % Indica donde están las imágenes
-\usepackage{xcolor}
-
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, babel} % <--- AGREGA "babel" AQUÍ
 % Definición de tus colores personalizados
 \definecolor{navyblue}{RGB}{0, 0, 128}      % Azul Marino
 \definecolor{darkred}{RGB}{150, 0, 0}
@@ -39,6 +40,42 @@
 
 \usepackage{amsthm}
 \newtheorem{definition}{Definición}[section] % Numeración por sección
-
+% --- Dimensiones y Márgenes ---
+\usepackage[a4paper, margin=2.0cm]{geometry} % Puedes cambiar a4paper por letterpaper si usas tamaño carta
 % --- Hipervínculos ---
 \usepackage[colorlinks=true, linkcolor=blue, urlcolor=cyan]{hyperref}
+% --- Encabezado y Pie de Página ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % Borra la configuración por defecto
+
+% Configuración del Encabezado
+\fancyhead[L]{\small \itshape Computación Científica Aplicada} % Materia/Título a la izquierda
+\fancyhead[R]{\small Gildardo Zepeda} % Tu nombre a la derecha
+\renewcommand{\headrulewidth}{0.4pt} % Línea decorativa bajo el encabezado
+
+% Configuración del Pie de Página
+\fancyfoot[C]{\thepage} % Número de página al centro
+\renewcommand{\footrulewidth}{0pt} % Sin línea en el pie de página (opcional)
+
+% Para que las páginas donde empieza un capítulo (que LaTeX pone en estilo 'plain') 
+% también tengan el número de página abajo, pero sin el encabezado:
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\fancyfoot[C]{\thepage}
+	\renewcommand{\headrulewidth}{0pt}
+}
+\usepackage[most]{tcolorbox}
+
+% Definición de un estilo de recuadro amarillo "suave"
+\newtcolorbox{caja_amarilla}[1][]{
+	colback=yellow!10!white,    % Color de fondo (amarillo muy clarito)
+	colframe=yellow!50!black,   % Color del borde (un amarillo más oscuro)
+	fonttitle=\bfseries,
+	coltitle=black,
+	title=#1,                   % Título opcional
+	arc=3pt,                    % Esquinas un poco redondeadas
+	left=5pt, right=5pt,        % Margen interno
+	before skip=10pt,           % Espacio antes del recuadro
+	after skip=10pt             % Espacio después del recuadro
+}
