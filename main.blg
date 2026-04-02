@@ -2,9 +2,21 @@ This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 A level-1 auxiliary file: portada.aux
-White space in argument---line 13 of file main.aux
+White space in argument---line 14 of file main.aux
  : \@input{caps/algebra
- :                      lineal/espacio vectorial.aux}
+ :                      lineal/Vectores/vectores.aux}
+I'm skipping whatever remains of this command
+White space in argument---line 15 of file main.aux
+ : \@input{caps/algebra
+ :                      lineal/Matrices/Matrices.aux}
+I'm skipping whatever remains of this command
+White space in argument---line 102 of file main.aux
+ : \@input{caps/algebra
+ :                      lineal/Espacios Vectoriales/espacio vectorial.aux}
+I'm skipping whatever remains of this command
+White space in argument---line 104 of file main.aux
+ : \@input{caps/métodos
+ :                       númericos/Diferenciación númerica/Diferenciacion Numérica.aux}
 I'm skipping whatever remains of this command
 The style file: alpha.bst
 I found no \citation commands---while reading file main.aux
@@ -50,4 +62,4 @@ warning$ -- 0
 while$ -- 0
 width$ -- 0
 write$ -- 2
-(There were 2 error messages)
+(There were 5 error messages)

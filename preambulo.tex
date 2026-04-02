@@ -9,11 +9,13 @@
 % --- Gráficos y Colores ---
 \usepackage{graphicx}
 \graphicspath{{img/}} % Indica donde están las imágenes
+\usepackage{nicematrix}
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta, babel} % <--- AGREGA "babel" AQUÍ
+\usetikzlibrary{arrows.meta, babel, fit}
 % Definición de tus colores personalizados
 \definecolor{navyblue}{RGB}{0, 0, 128}      % Azul Marino
 \definecolor{darkred}{RGB}{150, 0, 0}
+\definecolor{green}{RGB}{52, 128, 47}
 % Entorno personalizado para Ejemplos en Azul
 \newenvironment{ejemplo}[1][]{
 	\itshape\color{navyblue}

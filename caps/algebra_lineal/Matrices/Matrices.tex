@@ -1,0 +1,121 @@
+\chapter{Matrices}
+\section{Matrices y sus Operaciones }
+\begin{definition}[Matriz]
+	Una matriz es un arreglo rectangular de números, estos números reciben el nombre de \textbf{entradas} o \textbf{elementos} de la matriz
+\end{definition}
+El tamaño de una matriz esta definida por el número de filas $m$ y el número de columnas $n$, además, es muy útil usar la notación de doble índice para referirse a las entradas de la matriz $a_{ij}$, donde el índice $i$ representa la i-ésima fila, y el ídice $j$ representa la j-ésima columna. Así una matriz de $m\times n$ se puede representar de la siguiente forma: 
+\begin{equation}
+	A = \left(  \begin{matrix}
+		a_{11} & a_{12} &\cdots   &  a_{1n}\\
+		a_{21}& a_{22} & \cdots  & a_{2n} \\
+		\vdots &\vdots   &  \ddots & \vdots  \\
+		a_{m1} & a_{m2} & \cdots  & a_{mn}
+	\end{matrix}\right)
+\end{equation}
+
+\subsection{Suma de Matrices}
+La suma de matrices se define por componentes, es decir, sea $A = (a_{ij})_{m\times n}$ y $B=(b_{ij})_{m\times n}$, entonces:
+\begin{equation}
+	A + B = (a_{ij}+ b_{ij})_{m \times n}
+\end{equation}
+es decir:
+\begin{equation*}
+		A +	B= \left(  \begin{matrix}
+		a_{11} & a_{12} &\cdots   &  a_{1n}\\
+		a_{21}& a_{22} & \cdots  & a_{2n} \\
+		\vdots &\vdots   &  \ddots & \vdots  \\
+		a_{m1} & a_{m2} & \cdots  & a_{mn}
+	\end{matrix}\right) +  \left(  \begin{matrix}
+	b_{11} & b_{12} &\cdots   &  b_{1n}\\
+	b_{21}& b_{22} & \cdots  & b_{2n} \\
+	\vdots &\vdots   &  \ddots & \vdots  \\
+	b_{m1} & b_{m2} & \cdots  & b_{mn}
+	\end{matrix}\right) = \left(  \begin{matrix}
+	a_{11}+b_{11} & a_{12}+b_{12} &\cdots   &  a_{1n}+b_{1n}\\
+	a_{21}+b_{21}& a_{22}+b_{22} & \cdots  & a_{2n}+b_{2n} \\
+	\vdots &\vdots   &  \ddots & \vdots  \\
+	a_{m1}+b_{m1} & a_{m2}+b_{m2} & \cdots  & a_{mn}+b_{mn}
+	\end{matrix}\right)
+\end{equation*}
+\importante{NOTA: Para que la suma este definida, es necesario que tanto A como B sean del mismo tamaño}
+
+\subsection{Multiplicación por un Escalar}
+Sea A una matriz de $m \times n$ y $\alpha$ un escalar, la multiplicación por un escalar se define de la sigueinte forma:
+\begin{equation}
+	\alpha A = \alpha(a_{ij}) = (\alpha a_{ij}) 
+\end{equation}
+es decir:
+\begin{equation*}
+		\alpha A = \alpha \left(  \begin{matrix}
+		a_{11} & a_{12} &\cdots   &  a_{1n}\\
+		a_{21}& a_{22} & \cdots  & a_{2n} \\
+		\vdots &\vdots   &  \ddots & \vdots  \\
+		a_{m1} & a_{m2} & \cdots  & a_{mn}
+	\end{matrix}\right) = \left(  \begin{matrix}
+	\alpha a_{11} & \alpha a_{12} &\cdots   & \alpha a_{1n}\\
+	\alpha a_{21}& \alpha a_{22} & \cdots  & \alpha a_{2n} \\
+	\vdots &\vdots   &  \ddots & \vdots  \\
+	\alpha a_{m1} &\alpha a_{m2} & \cdots  &\alpha a_{mn}
+	\end{matrix}\right)
+\end{equation*}
+\importante{NOTA: A partir de estas definiciones, se puede trabajar con el negativo de una matriz:
+$$
+	A - B = A +(-B)
+$$
+ }
+\subsection{Multiplicación de Matrices}
+Si $A$ es una matriz de $m \times n$ y $B$ es una matriz $n \times r$, entonces, la multiplicación de matrices $C=AB$ es una matriz de $m \times r$, la entreda $c_{ij}$ se puede calcular con:
+\begin{equation}
+	c_{ij} = \sum^{n}_{k=1} a_{ik}b_{kj} = a_{i1}b_{1j}+a_{i2}b_{2j}+\dots+a_{in}b_{nj}
+\end{equation}
+visualmente se puede ver como la entrada $c_{ij}$ se produce de multiplicar la i-ésima fila con la j-ésima columna (como si fuera un producto punto)
+
+
+
+\begin{equation*}
+	C = AB = 
+	\begin{bNiceMatrix}[
+		margin,
+		code-after = {
+			% Resalta la fila 3 (i-ésima) de la primera matriz
+			\tikz \node [fill=blue!20, fill opacity=0.5, inner sep=4pt, fit=(3-1)(3-4)] {} ;
+		}
+		]
+		a_{11} & a_{12} & \dots  & a_{1n} \\
+		\vdots & \vdots & \dots  & \vdots \\
+		a_{i1} & a_{i2} & \dots  & a_{in} \\
+		\vdots & \vdots & \ddots & \vdots \\
+		a_{m1} & a_{m2} & \dots  & a_{mn}
+	\end{bNiceMatrix}
+	\begin{bNiceMatrix}[
+		margin,
+		code-after = {
+			% Resalta la columna 3 (j-ésima) de la segunda matriz
+			\tikz \node [fill=red!20, fill opacity=0.5, inner sep=0pt, fit=(1-3)(4-3)] {} ;
+		}
+		]
+		b_{11} & \dots & b_{1j} & \dots & b_{1r} \\
+		b_{21} & \dots & b_{2j} & \dots & b_{2r} \\
+		\vdots & \vdots& \vdots & \dots & \vdots \\
+		b_{n1} & \dots & b_{nj} & \dots & b_{nr}
+	\end{bNiceMatrix}
+\end{equation*}
+
+\subsection{Potencia de Matrices:}
+Sea A una matriz cuadrada. Se define $A^{k}$ como:
+\begin{equation}
+	A^{k}= A A \dots A 
+\end{equation}
+
+donde A se multiplica k-veces, con $k>0$.
+\medspace
+Es importante definir que cuando $k=0$ tenemos que:
+\begin{equation}
+	A^{0}= I_n
+\end{equation}
+
+\subsection{Transpuesta de una Matriz}
+La transpuesta de una matriz $A$ de tamaño $m \times n$ se obtiene de intercambiar las filas por las columnas, se denota por $A^t$ y se define por:
+\begin{equation}
+	(A^t)_{ij}=A_{ji} \; \mathtt{  para \; toda }\; i\; \mathtt{ y \; } j
+\end{equation}
